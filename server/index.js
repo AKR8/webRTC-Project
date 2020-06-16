@@ -6,7 +6,6 @@ const path = require('path');
 
 app.use(bodyParser.json({limit: '20mb'}));
 app.use(bodyParser.urlencoded({limit: '20mb', extended: true}));
-app.use(express.static(__dirname));
 
 app.use(express.static(path.join(__dirname, '../webrtc-project/dist/webrtc-project/')));
 

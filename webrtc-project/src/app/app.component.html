@@ -42,16 +42,29 @@
   <div class="row h-100 w-100">
     <div class="col-12 col-sm-6 d-flex justify-content-center">
       <div class="embed-responsive embed-responsive-16by9">
-        <video class="embed-responsive-item" muted></video>
+        <h1>LOCAL</h1>
+        <video class="embed-responsive-item" id="local" autoplay *ngIf="videoAccess"></video>
       </div>
     </div>
     <div class="col-12 col-sm-6 d-flex justify-content-center">
       <div class="embed-responsive embed-responsive-16by9">
-        <video class="embed-responsive-item" id="video" autoplay></video>
+        <h1 >REMOTE</h1>
+        <video class="embed-responsive-item" id="video" autoplay *ngIf="remoteAccess"></video>
         <!-- <video class="embed-responsive-item" muted></video> -->
       </div>
     </div>
   </div>
 
 </div>
-<button (click)="startup()">CLICK ME</button>
+<!-- <button (click)="referCall()">TRANSFER LOCAL</button> -->
+
+<button (click)="muteLocalVideo()">MUTE VIDEO</button>
+<button (click)="unMuteLocalVideo()" class="ml-2">UNMUTE VIDEO</button>
+<button (click)="muteLocalAudio()" class="ml-2">MUTE AUDIO</button>
+<button (click)="unMuteLocalAudio();localVideoConn()" class="ml-2">UNMUTE AUDIO</button>
+<button (click)="hold()" class="ml-2">HOLD</button>
+<button (click)="unHold()" class="ml-2">UNHOLD</button>
+<button (click)="startup()" class="ml-2">CALL 400</button>
+<button (click)="localVideoConn()" class="ml-2">LOCAL VIDEO DISPLAY</button>
+<button (click)="callEnd()" class="ml-2">END CALL</button>
+<!-- <app-test-js></app-test-js> -->
